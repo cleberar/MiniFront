@@ -1,0 +1,17 @@
+{
+    "version": "1",
+    "release": "1.0",
+    "css" : {
+        "main" : [
+            "sources/css/bootstrap.css",
+            "sources/css/bootstrap-responsive.css",
+            "sources/css/my-style.css"
+        ]
+    },
+    "js": {
+        "codes": [
+            "sources/js/jquery.js",
+            "sources/js/bootstrap.js"
+        ]
+    }
+}
