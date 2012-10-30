@@ -1,0 +1,159 @@
+/*
+
+CSS Social Icons
+By: Nick La (@nickla)
+http://webdesignerwall.com/tutorials/css-social-buttons
+
+Version: 1.0
+
+*/
+
+/************************************************************************************
+SOCIAL LINK a.sb
+*************************************************************************************/
+a.sb,
+.sb a {
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: -900em;
+	color: #333;
+	text-decoration: none;
+	line-height: 100%;
+	white-space: nowrap;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	margin: 0 2px 5px 0;
+	
+	/* default button color */
+	background-color: #ececec;
+	border: solid 1px #b8b8b9;
+	
+	/* default box shadow */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.1);
+
+	/* default border radius */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+/* for IE */
+*:first-child+html a.sb,
+*:first-child+html .sb a {
+	text-indent: 0;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+
+
+/* SB LIST
+================================================ */
+.sb {
+	margin: 0;
+	padding: 0;
+}
+.sb li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+
+/* SIZES
+================================================ */
+/* small */
+a.sb.small,
+.sb.small a {
+	width: 26px;
+	height: 26px;
+	font-size: 90%;
+}
+
+/* large */
+a.sb.large,
+.sb.large a {
+	width: 40px;
+	height: 40px;
+	font-size: 120%;
+}
+
+
+/* STYLES
+================================================ */
+
+/* min style */
+a.sb.min,
+.sb.min a {
+	background-color: transparent;
+	border: none;
+	
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+/* circle style */
+a.sb.circle,
+.sb.circle a,
+a.sb.circle:before,
+.sb.circle a:before,
+a.sb.circle:after,
+.sb.circle a:after {
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+}
+
+
+/* reset bottom border-radius for round and circle */
+a.sb.circle:before,
+.sb.circle a:before,
+a.sb:before,
+.sb a:before {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+}
+
+/* thick-border border style */
+a.sb.thick-border,
+.sb.thick-border a {
+	border-width: 3px;
+}
+
+
+/* ICONS
+================================================ */
+a.sb.twitter,
+.sb a.twitter {
+	background-image: url(../img/twitter_bird.png);
+}
+
+a.sb.facebook,
+.sb a.facebook {
+	background-image: url(../img/facebook.png);
+}
+
+a.sb.email,
+.sb a.email {
+	background-image: url(../img/email.png);
+}
+
+a.sb.linkedin,
+.sb a.linkedin {
+	background-image: url(../img/linkedin.png);
+}
+
+a.sb.github,
+.sb a.github {
+	background-image: url(../img/github.png);
+}

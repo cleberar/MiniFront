@@ -1,66 +1,319 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Scfe by cleberar</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="author" content="Cleber Rodrigues" />
+    <title>Exemplo Simples Compilador Front end em PHP</title>
+    <link href='http://fonts.googleapis.com/css?family=Unlock' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Scfe</h1>
-        <p></p>
+</head>
+<body>
 
-        <p class="view"><a href="https://github.com/cleberar/scfe">View the Project on GitHub <small>cleberar/scfe</small></a></p>
+<div id="bottom-menu">
+    <p>
+        C&oacute;digo licenciado sob
+        <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">
+            Licen&ccedil;a Apache v2.0
+        </a>.
+    </p>
 
-
-        <ul>
-          <li><a href="https://github.com/cleberar/scfe/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/cleberar/scfe/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/cleberar/scfe">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/cleberar">cleberar</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<div class="social">
+        <a href="https://twitter.com/cleberar" target="_blank"
+           class="sb circle twitter" data-original-title="Twitter">
+                Twitter
+        </a>
+        <a href="http://www.facebook.com/cleber.ar" target="_blank"
+           class="sb circle facebook" data-original-title="Facebook">
+                Facebook
+        </a>
+        <a href="https://github.com/cleberar" target="_blank"
+           class="sb circle github" data-original-title="GitHub">
+                GitHub
+        </a>
+        <a href="http://www.linkedin.com/in/cleberar" target="_blank"
+           class="sb circle linkedin" data-original-title="LinkedIn">
+                LinkedIn
+        </a>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+</div>
+
+<div class="container">
+
+    <section>
+        <div class="page-header">
+            <h1 class="title">Simples Compilador Front end em PHP</h1>
+        </div>
+
+        <p >
+           SCFE &eacute; um script em PHP para  minimizar e unificar arquivos
+            front-end (CSS e JavaScript), mas sem alterar os c&oacute;digos em
+            tempo de desenvolvimento, garantindo uma programa&ccedil;&atilde;o organizada e
+            funcional para simples projetos WEB.
+        </p>
+
+        <p>
+            Durante o desenvolvimento voc&ecirc; ir&aacute; trabalhar com seus c&oacute;digos
+            normalmente, podendo separa-los conforme a organiza&ccedil;&atilde;o do seu projeto.
+            <br/>
+            O SCFE ir&aacute; identificar o m&oacute;dulo WEB simulando a unifica&ccedil;&atilde;o dos
+            seus arquivos. Quando fores publicar basta compilar e o SCFE ir&aacute; unificar e minimizar
+            os arquivos JS e CSS, garantindo performance do tempo de carregamento de suas p&aacute;ginas.
+        </p>
+        
+        <p class="download">
+            <a href="https://github.com/cleberar/scfe" class="btn btn-primary btn-large">
+                <strong>Fork GitHub</strong>
+            </a>
+            <a href="https://github.com/cleberar/scfe/zipball/master" class="btn btn-success btn-large">
+                <strong>Download Zip </strong>
+            </a>
+        </p>
+    </section>
+   <br/>
+    <section>
+        <div class="page-header">
+        <h2>Estrutura de arquivos</h2>
+        </div>
+        <p >
+            A estrutura de arquivos &eacute; livre, voc&ecirc; utiliza conforme
+             for melhor para o seu projeto.
+        </p>
+        <p>
+            Para isto &eacute; necess&aacute;rio um arquivo <code>build.json</code>,
+            este dever&aacute; conter uma estrutura JSON com a sua hierarquia de diretorios
+            e arquivos.
+        </p>
+<pre>
+{
+    "version": "1",
+    "release": "1.0",
+    "css" : {
+        "main" : [
+            "sources/css/bootstrap.css",
+            "sources/css/bootstrap-responsive.css",
+            "sources/css/my-style.css"
+        ]
+    },
+    "js": {
+        "codes": [
+            "sources/js/library/jquery.js",
+            "sources/js/library/bootstrap.js",
+            "sources/js/library/head.js",
+            "sources/js/library/strings.js",
+            "sources/js/plugins/jquery.plugin.maskedit.js",
+            "sources/js/api/api.js",
+            "sources/js/api/api.error.js",
+            "sources/js/api/api.http.js",
+            "sources/js/api/api.user.js"
+        ]
+    }
+}
+</pre>
+
+            <p>
+                No exemplo citado acima ser&aacute; gerado dois diretorios: <code>css</code> e <code>js</code>
+                cada diretorio ir&aacute; conter um arquivo  <code>css/main.css</code> e <code>js/codes.js</code>
+                cada um ter&aacute; o conte&uacute;do da sua respectiva lista de arquivos de forma unificada.
+            </p>
+
+          <p>
+                Para a <code>build.json</code> exemplificada acima devemos possuir a seguinte estrutura de arquivos.
+            </p>
+<pre>
+  seuprojeto/
+  ├── sources/
+  │   ├── css
+  │   │   ├── bootstrap.css
+  │   │   ├── bootstrap-responsive.css
+  │   │   ├── my-style.css
+  │   ├── js
+  │   │   ├── api
+  │   │   │   ├── api.js
+  │   │   │   ├── api.error.js
+  │   │   │   ├── api.http.js
+  │   │   │   ├── api.user.js
+  │   │   ├── library
+  │   │   │   ├── jquery.js
+  │   │   │   ├── bootstrap.js
+  │   │   │   ├── head.js
+  │   │   │   ├── strings.js
+  │   │   ├── plugins
+  │   │   │   ├── jquery.plugin.maskedit.js
+  └── index.html
+  └── build.json
+  └── scfe.php
+</pre>
+        <p>
+          <strong>Observe:</strong> n&atildeo criamos os diret&oacute;rios de css e js,
+          estes ser&atilde;o simulados pelo SCFE em tempo de desenvolvimento
+          e criados quando compilados. 
+        </p>
+        <p class="lead">
+            Ao executar a aplica&ccedil;&atilde;o teremos apenas um arquivo de JavaScript,
+            mas durante o desenvolvimento os arquivos est&atilde;o separados conforme suas
+            caracteristicas, facilitando o desenvolvimento e manuten&ccedil;&atilde;o.
+            
+        </p>
+    </section>
+
+     <br/>
+    <section>
+        <div class="page-header">
+        <h2>Como incorporar ao HTML</h2>
+        </div>
+        <p class="lead">
+        </p>
+        <p>
+            Basta adicionar o ao seu HTML os nomes de cada arquivo definido na base do  <code>build.json</code>.<br/>
+            No nosso exemplo criamos dois arquivos principais js/codes.js e css/main.css
+        
+        </p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gtExemplo&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/main.css" type="text/css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src="js/codes.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+    </section>
+
+         <br/>
+    <section>
+        <div class="page-header">
+        <h2>Executando para Desenvolvimento</h2>
+        </div>
+        
+        <h3>Development Server PHP</h3>
+        <p>
+            A partir do PHP 5.4.0 foi implementado um servidor web embutido para fins de desenvolvimento.<br/>
+            Para executar o SCFE basta executar o <code>scfe.php</code> como router.
+        </p>
+        <pre>
+php -S localhost:8000 scfe.php
+PHP 5.4.7 Development Server started at Mon Oct 29 00:12:27 2012
+Listening on http://localhost:8000
+Document root is /var/www/scafe
+Press Ctrl-C to quit.
+        </pre>
+
+        <h3>Apache</h3>
+        <p >
+            Para executar no apache voc&ecirc; deve criar um <code>.htaccess</code>
+            (modo mod_rewrite deve estar habilitado), exemplo:
+        </p>
+        <pre>
+&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule .(/)?$ scfe.php
+&lt;/IfModule&gt;
+        </pre>
+        
+        <h3>Nginx</h3>
+        <p >
+            Para executar no Nginx voc&ecirc; deve adicionar um location ao .conf
+            da sua aplica&ccedil;&atilde;o, exemplo:
+        </p>
+        <pre>
+ location ~ (/&ltnome diretorio&gt;/) {
+        if (-f $request_filename) {
+            break;
+        }
+        if (-d $request_filename) {
+            break;
+        }
+        rewrite ^(.*)$ /&ltnome diretorio&gt/scfe.php last;
+        break;
+    }
+
+        </pre>
+    </section>
+        
     
-  </body>
+         <br/>
+    <section>
+        <div class="page-header">
+        <h2>Compilando</h2>
+        </div>
+        
+        <p>
+            Desenvolvimento pronto! Agora vamos compilar e unificar os arquivos
+            para colocarmos em produ&ccedil;&atilde;o.
+        </p>
+        
+        Para Isto basta executar o <code>scfe.php</code> na linha de comando:<br/>
+        <pre>
+$ php scfe.php
+
+ Iniciando compilacao de arquivos
+
+===============================================================================|
+
+ verificando build......................................................  feito
+ - criando diretorio de cache ... feito
+
+ - [CSS] verificando arquivos
+   * unificando arquivo compiled/main.css
+      sources/css/bootstrap.css.........................................  feito
+      sources/css/bootstrap-responsive.css..............................  feito
+      sources/css/my-style.css..........................................  feito
+
+   * comprimindo main.css...............................................  feito
+
+ - [JS] verificando arquivos
+   * unificando arquivo compiled/codes.js
+      sources/js/library/jquery.js......................................  feito
+      sources/js/library/bootstrap.js...................................  feito
+      sources/js/library/head.js........................................  feito
+      sources/js/library/strings.js.....................................  feito
+      sources/js/plugins/jquery.plugin.maskedit.js......................  feito
+      sources/js/api/api.js.............................................  feito
+      sources/js/api/api.error.js.......................................  feito
+      sources/js/api/api.http.js........................................  feito
+      sources/js/api/api.user.js........................................  feito
+
+   * comprimindo codes.js...............................................  feito
+        </pre>
+
+            </br>
+        <p class="lead">
+            Feito! Publique os arquivos  compilados e seja feliz.
+        </p>
+    </section>
+      </div>
+    </div>
+
+  </div>
+
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <p >
+             &nbsp;
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/codes.js"></script>
+    <script>
+    $(function() {
+        $('.sb').tooltip();
+    });
+</script>
+</body>
 </html>
