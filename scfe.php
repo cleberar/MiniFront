@@ -98,7 +98,7 @@ class Scafe {
             $method = "_{$type}Compress";
 
             // se o metodo de compress existir
-            if (is_callable(array(self, $method))) {
+            if (is_callable(array($this, $method))) {
 
                 printf(" - [%s] verificando arquivos  ", strtoupper($type));
                 $list = self::_uniqueFile($type, $content);
