@@ -8,7 +8,7 @@ Durante o desenvolvimento você irá trabalhar com seus códigos normalmente, po
 O SCFE irá identificar o módulo WEB simulando a unificação dos seus arquivos. Quando fores publicar basta compilar e o SCFE irá unificar e minimizar os arquivos JS e CSS, garantindo performance do tempo de carregamento de suas páginas.
 
 
-[Exemplo / Documentação on-line](http://cleberar.github.com/scafe "Site Exemplo")
+[Exemplo / Documentação on-line](http://cleberar.github.com/scfe "Site Exemplo")
 
 
 Estrutura de arquivos
