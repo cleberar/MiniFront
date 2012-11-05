@@ -1,9 +1,9 @@
 <?php
 /**
- * SCFE :: Simples Compilador Front end em PHP
+ * MiniFront :: Simples Compilador Front end em PHP
  *
  * Um Simples Script para unificar e comprimir arquivos JavaScript e CSS
- * ideal para pequenos projetos, ou não ;)
+ * ideal para pequenos projetos, ou nao ;)
  *
  * PHP version 5
  * 
@@ -14,10 +14,10 @@
 
 try {
 
-    $scafe = new Scafe();
+    $minifront = new MiniFront();
     return (php_sapi_name() == "cli")
-        ? $scafe->compiler()
-        : $scafe->web($_SERVER['REQUEST_URI']);
+        ? $minifront->compiler()
+        : $minifront->web($_SERVER['REQUEST_URI']);
 
 } catch (Exception $e) {
 
@@ -34,7 +34,7 @@ try {
  * Classe que ira unificar os arquivos e/ou compilar
  * 
  */
-class Scafe {
+class MiniFront {
 
     /**
      * Diretorio para cache ds arquivos durante a compilacao
