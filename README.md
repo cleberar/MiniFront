@@ -1,11 +1,11 @@
-Simples Compilador Front end em PHP
+MiniFront :: Simples Compilador Front end em PHP
 ================================
 
 
-SCFE é um script em PHP para minimizar e unificar arquivos front-end (CSS e JavaScript), mas sem alterar os códigos em tempo de desenvolvimento, garantindo uma programação organizada e funcional para simples projetos WEB.
+MiniFront é um script em PHP para minimizar e unificar arquivos front-end (CSS e JavaScript), mas sem alterar os códigos em tempo de desenvolvimento, garantindo uma programação organizada e funcional para simples projetos WEB.
 
 Durante o desenvolvimento você irá trabalhar com seus códigos normalmente, podendo separa-los conforme a organização do seu projeto. 
-O SCFE irá identificar o módulo WEB simulando a unificação dos seus arquivos. Quando fores publicar basta compilar e o SCFE irá unificar e minimizar os arquivos JS e CSS, garantindo performance do tempo de carregamento de suas páginas.
+O MiniFront irá identificar o módulo WEB simulando a unificação dos seus arquivos. Quando fores publicar basta compilar e o SCFE irá unificar e minimizar os arquivos JS e CSS, garantindo performance do tempo de carregamento de suas páginas.
 
 
 [Exemplo / Documentação on-line](http://cleberar.github.com/scfe "Site Exemplo")
@@ -68,9 +68,9 @@ Para a build.json exemplificada acima devemos possuir a seguinte estrutura de ar
 	  │   │   │   ├── jquery.plugin.maskedit.js
 	  └── index.html
 	  └── build.json
-	  └── scfe.php
+	  └── minifront.php
 
-**Observe**: não criamos os diretórios de css e js, estes serão simulados pelo SCFE em tempo de desenvolvimento e criados quando compilados.
+**Observe**: não criamos os diretórios de css e js, estes serão simulados pelo c em tempo de desenvolvimento e criados quando compilados.
 
 
 **Ao executar a aplicação teremos apenas um arquivo de JavaScript, mas durante o desenvolvimento os arquivos estão separados conforme suas caracteristicas, facilitando o desenvolvimento e manutenção.**
@@ -100,12 +100,12 @@ Executando para Desenvolvimento
 ## Development Server PHP ##
 
 A partir do PHP 5.4.0 foi implementado um servidor web embutido para fins de desenvolvimento.
-Para executar o SCFE basta executar o scfe.php como router.
+Para executar o minifront basta executar o minifront.php como router.
 
-	php -S localhost:8000 scfe.php
+	php -S localhost:8000 minifront.php
 	PHP 5.4.7 Development Server started at Mon Oct 29 00:12:27 2012
 	Listening on http://localhost:8000
-	Document root is /var/www/scafe
+	Document root is /var/www/minifront
 	Press Ctrl-C to quit.
         
 ## Apache ##
@@ -128,7 +128,7 @@ Para executar no Nginx você deve adicionar um location ao .conf da sua aplicaç
 	        if (-d $request_filename) {
 	            break;
 	        }
-	        rewrite ^(.*)$ /<nome diretorio>/scfe.php last;
+	        rewrite ^(.*)$ /<nome diretorio>/minifront.php last;
 	        break;
 	    }
 	
@@ -140,7 +140,7 @@ Compilando
 Desenvolvimento pronto! Agora vamos compilar e unificar os arquivos para colocarmos em produção.
 
 Para Isto basta executar o scfe.php na linha de comando:
-	$ php scfe.php
+	$ php minifront.php
 	
 	 Iniciando compilacao de arquivos
 	
