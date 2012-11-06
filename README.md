@@ -115,7 +115,7 @@ Para executar no apache você deve criar um .htaccess (modo mod_rewrite deve est
 	    RewriteEngine On
 	    RewriteCond %{REQUEST_FILENAME} !-f
 	    RewriteCond %{REQUEST_FILENAME} !-d
-	    RewriteRule .(/)?$ scfe.php
+	    RewriteRule .(/)?$ minifront.php
 	</IfModule>
 
 ## Nginx ##
